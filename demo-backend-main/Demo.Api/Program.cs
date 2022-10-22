@@ -1,6 +1,8 @@
 using Demo.Queries.DocumentType;
 using Demo.Queries.Person;
+using Demo.Queries.Producto;
 using Demo.Repository.Person;
+using Demo.Repository.Producto;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +32,11 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddTransient<IDocumenTypeQueries, DocumenTypeQueries>();
 builder.Services.AddTransient<IPersonQueries, PersonQueries>();
 builder.Services.AddTransient<IPersonRepository, PersonRepository>();
+
+
+//Tabla Producto
+builder.Services.AddTransient<IProductoQueries, ProductoQueries>();
+builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
 
 var app = builder.Build();
 
