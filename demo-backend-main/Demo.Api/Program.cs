@@ -1,8 +1,10 @@
 using Demo.Queries.DocumentType;
 using Demo.Queries.Person;
 using Demo.Queries.Producto;
+using Demo.Queries.ProductoxTienda;
 using Demo.Repository.Person;
 using Demo.Repository.Producto;
+using Demo.Repository.ProductoxTienda;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +39,10 @@ builder.Services.AddTransient<IPersonRepository, PersonRepository>();
 //Tabla Producto
 builder.Services.AddTransient<IProductoQueries, ProductoQueries>();
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
+
+//Tabla ProductoxTienda
+builder.Services.AddTransient<IProductoxTiendaQueries, ProductoxTiendaQueries>();
+builder.Services.AddTransient<IProductoxTiendaRepository, ProductoxTiendaRepository>();
 
 var app = builder.Build();
 
