@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-title>
+    Agregar Nuevo Producto
+  </mat-card-title>
+  <mat-card-content>
+    <div class="form-content" [formGroup]="formProducto">
+      <div class="form-control-group">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripcion</mat-label>
+          <input matInput formControlName="description">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>ID de la categoria</mat-label>
+          <input matInput formControlName="categoriaId">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>ID de la marca</mat-label>
+          <input matInput formControlName="marcaId">
+        </mat-form-field>
+
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-raised-button (click)="guardar()" [disabled]="formProducto.invalid">Guardar</button>
+    <button mat-raised-button (click)="cancelar()">Cancelar</button>
+  </mat-card-footer>
+</mat-card>
